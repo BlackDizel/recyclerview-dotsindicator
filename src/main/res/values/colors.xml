@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dot_active">#66a5c0</color>
+    <color name="dot_inactive">#aaa</color>
+
+    <color name="inactive_instagram">#999998</color>
+</resources>
