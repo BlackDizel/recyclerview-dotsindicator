@@ -22,37 +22,23 @@ To install the library add:
 Usage
 
 ```java
-    void initDots(RecyclerView rv,
-                  FrameLayout layout, //container for dots
-                  LinearLayoutManager layoutManager,
-                  int itemsNum) {
-
-        rv.addOnScrollListener(new ScrollListener(layoutManager);
-
-        dotsIndicator = new DotsIndicator(layout);
-        dotsIndicator.init(); //simple add linearLayout to layout
-
-        dotsIndicator.setDots(itemsNum); //generate dots in linearlayout
-        dotsIndicator.initDots(); //reset selected dot
-    }
-
-    private class ScrollListener extends RecyclerView.OnScrollListener {
-
-        private LinearLayoutManager layoutManager;
-
-        ScrollListener(LinearLayoutManager layoutManager) {
-            this.layoutManager = layoutManager;
-        }
-
-        @Override
-        public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-            super.onScrolled(recyclerView, dx, dy);
-
-            int pos = layoutManager.findFirstVisibleItemPosition();
-
-            dotsIndicator.onScroll(pos, layoutManager.findViewByPosition(pos));
-        }
-    }
+   
+   //init
+   
+   RecyclerView rvItems;
+   LayoutManger manager;
+   FrameLayout flDots; //container for dots
+   
+   DotsIndicatorHelper dotsIndicatorHelper;
+   
+   void init(){
+            dotsIndicatorHelper = new DotsIndicatorHelper(flDots, rvItems, layoutManager);
+   }
+   
+   void update(){ //call only then need to change dots num
+            dotsIndicatorHelper.updateData(3); //where 3 is new dots num
+   }
+   
 ```
 	
 	
