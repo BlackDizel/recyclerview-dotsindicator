@@ -40,6 +40,8 @@ Usage
    
 ```
 
+To custom drawables, use attrs `app:drawableSelected` and `app:drawableBackground`
+
 Result
 
 <img src="https://raw.githubusercontent.com/BlackDizel/recyclerview-dotsindicator/master/dots.png" width="360" height="640"/>
