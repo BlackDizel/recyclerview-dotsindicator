@@ -15,7 +15,7 @@ To install the library add:
         maven { url "https://jitpack.io" }
    }
    	dependencies {
-	        compile 'com.github.BlackDizel:recyclerview-dotsindicator:1.0.1'
+	        compile 'com.github.BlackDizel:recyclerview-dotsindicator:1.0.2'
 	}
    ```  
 
@@ -26,17 +26,16 @@ Usage
    //init
    
    RecyclerView rvItems;
-   LayoutManger manager;
-   FrameLayout flDots; //container for dots
    
-   DotsIndicatorHelper dotsIndicatorHelper;
+   ViewDotsIndicator viewDotsIndicator;
    
    void init(){
-            dotsIndicatorHelper = new DotsIndicatorHelper(flDots, rvItems, layoutManager);
+	viewDotsIndicator = findViewById(R.id.someId); //just add org.byters.dotsindicator.ViewDotsIndicator to layout
+	viewDotsIndicator.init(rvItems);
    }
    
    void update(){ //call only then need to change dots num
-            dotsIndicatorHelper.updateData(3); //where 3 is new dots num
+	viewDotsIndicator.updateData(3, 0); //where 3 is new dots num, and 0 is selected position
    }
    
 ```
