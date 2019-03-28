@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.Gravity;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -134,7 +135,10 @@ public class ViewDotsIndicator extends LinearLayout {
 
             int pos = layoutManager.findFirstVisibleItemPosition();
 
-            if (layoutManager.findViewByPosition(pos).getRight() < getContext().getResources().getDisplayMetrics().widthPixels / 2)
+            View view = layoutManager.findViewByPosition(pos);
+            if (view == null) return;
+
+            if (view.getRight() < getContext().getResources().getDisplayMetrics().widthPixels / 2)
                 pos += 1;
 
             updateDots(pos);
