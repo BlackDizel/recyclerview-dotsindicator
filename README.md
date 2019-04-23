@@ -15,7 +15,7 @@ To install the library add:
         maven { url "https://jitpack.io" }
    }
    	dependencies {
-	        compile 'com.github.BlackDizel:recyclerview-dotsindicator:1.0.2'
+	        compile 'com.github.BlackDizel:recyclerview-dotsindicator:1.0.3'
 	}
    ```  
 
